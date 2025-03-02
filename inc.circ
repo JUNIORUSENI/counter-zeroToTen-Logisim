@@ -87,7 +87,7 @@
     </comp>
 
     <!-- AND Gate for Load Control -->
-      <comp lib="1" loc="(450, 240)" name="AND Gate">
+      <comp lib="1" loc="(450, 210)" name="AND Gate">
         <a name="inputs" val="2"/>
           <a name="label" val="Load Control"/>
     </comp>
@@ -117,16 +117,16 @@
     <wire from="(100,100)" to="(230,100)"/>  <!-- Input to Adder -->
     <wire from="(200,200)" to="(230,200)"/>  <!-- Constant 1 to Adder -->
     <wire from="(300,150)" to="(380,150)"/>  <!-- Adder Output to Register Input -->
-    <wire from="(380,150)" to="(380,200)"/>
-    <wire from="(380,200)" to="(230,200)"/>
-    <wire from="(450,150)" to="(600,150)"/>      <!-- Register Output to Output Pin -->
-    <wire from="(400,270)" to="(400,240)"/>    <!-- Clock to AND Gate -->
-    <wire from="(350,270)" to="(400,210)"/>      <!-- Reset Button to AND Gate-->
-    <wire from="(450, 240)" to="(450, 210)"/>       <!-- AND Gate output to Register load input-->
-     <wire from="(400,210)" to="(450,210)"/>
-    <wire from="(100,100)" to="(100, 250)"/>
-    <wire from="(100,250)" to="(180, 250)"/>
-     <wire from="(450,150)" to="(450,250)"/>
+    <wire from="(380,150)" to="(380,200)"/>  <!-- Feedback loop: Register Output to Adder Input -->
+    <wire from="(380,200)" to="(230,200)"/>  <!-- Feedback loop (continued) -->
+    <wire from="(450,150)" to="(600,150)"/>  <!-- Register Output to Output Pin -->
+    <wire from="(400,270)" to="(420,240)"/>  <!-- Clock to AND Gate -->
+    <wire from="(350,270)" to="(420,180)"/>  <!-- Reset Button to AND Gate -->
+    <wire from="(420,180)" to="(420,240)"/>
+    <wire from="(450,210)" to="(450,180)"/>  <!-- AND Gate Output to Register load Input -->
+    <wire from="(100,100)" to="(100,250)"/>
+    <wire from="(100,250)" to="(180,250)"/>
+    <wire from="(450,150)" to="(450,250)"/>
     <wire from="(450,250)" to="(560,250)"/>
   </circuit>
 </project>
